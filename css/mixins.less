@@ -73,18 +73,18 @@ img{
   font-family: @base_text_ff_bold;
 }
 
-.gradient{
-  position: relative;
-  &:after{
-    content:'';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: -webkit-linear-gradient(rgba(243,129,129,0.9) 0%, rgba(252,227,138,0.9)  100%);
-    background: -o-linear-gradient(rgba(243,129,129,0.9) 0%, rgba(252,227,138,0.9)  100%);
-    background: linear-gradient(rgba(243,129,129,0.9) 0%, rgba(252,227,138,0.9)  100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6fce38a', endColorstr='#e6f38181',GradientType=0 ); /* IE6-9 */
+
+.transition(...) {
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+
+.color-and-hover(@color: #6c97e5){
+  color: @color;
+  .transition(all .3s ease-in-out;);
+  &:hover{
+    filter: drop-shadow(0 0 10px @color);
   }
 }
